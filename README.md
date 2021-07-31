@@ -20,6 +20,7 @@ Optional switches:
 <ul>
 <li>verbosity - define wheter you want to display IP addresses which haven't been found in shodan.</li>
 <li>output - save your results in CSV file </li>
+<li>api - check information about API key. In practise used to verify connection establishment with the API</li>  
 </ul>
 </p>
 
@@ -27,6 +28,7 @@ Optional switches:
 
 
 <h2><a id="installation" class="anchor" aria-hidden="true" href="#installation"></a>Install & Config</h2>
+<p>Install requirements:</p>
 <pre><code>pip install requirements.txt</code></pre>
 <p>Update line 258 with your API key:</p>
 <pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
@@ -41,7 +43,7 @@ Optional switches:
 <pre><code>python3 ASS.py -i 8.8.8.8 4.4.4.4</code></pre>
 
 
-<p>Query single/multiple network clusters, display "not found" hosts too, save results to CSV file:
+<p>Query single/multiple network clusters, display also "not found" IPs and save results to CSV file:
 <pre><code>python ASS.py -n 192.168.1.0/24 172.16.0.0/16 -v -o data.csv</code></pre>
 
 <h2><a id="updates" class="anchor" aria-hidden="true" href="#updates"></a>Future update goal</h2>
