@@ -30,6 +30,9 @@ Optional switches:
 <pre><code>pip install requirements.txt</code></pre>
 <p>Update line 258 with your API key:</p>
 <pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
+<p>Then you may want to run the following command in order to verify whether connection with API establishes correctly:</p>
+<pre><code>python ASS.py -a</code></pre>
+
 
 <h2><a id="ExampleUsage" class="anchor" aria-hidden="true" href="#ExampleUsage"></a>Example usage</h2>
 <img src="https://github.com/F3715H/AutomaticShodanSearch/blob/main/imgs/1.png" width=100% height=100%>
