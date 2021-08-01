@@ -5,7 +5,7 @@
 
 <h2><a id="general" class="anchor" aria-hidden="true" href="#installation"></a>General Info</h2>
 
-<p>The script automates queries to shodan using its public API. All queries cover free shodan license. In a situation when there is a need to start general passive reconnaissance (get the most important things like hostnames, OS and especially open ports) for several network clusters, it may save a lot of time because you see where you should start your assessment maybe? It is worth to mention that "Last Update" column refers to the date when shodan cached information about specific IP.</p>
+<p>The script automates queries to shodan using its public API. All queries cover free shodan license. In a situation when there is a need to start general passive reconnaissance (get the most important things like hostnames, OS and especially open ports) for several network clusters, it may save a lot of time because you see where you should start your assessment maybe? It is worth to mention that "Last Update" column refers to the date when shodan cached information about specific IP. There's also parameter which allows save all results to csv.</p>
 
 <img src="https://github.com/F3715H/AutomaticShodanSearch/blob/main/imgs/2.png" width=100% height=100%>
 
@@ -19,7 +19,7 @@
 Optional switches:
 <ul>
 <li>verbosity - define wheter you want to display IP addresses which haven't been found in shodan.</li>
-<li>output - save your results in CSV file </li>
+<li>output - save your results to CSV file </li>
 <li>api - check information about API key. In practise used to verify connection establishment with the API</li>  
 </ul>
 </p>
