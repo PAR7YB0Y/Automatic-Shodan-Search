@@ -40,7 +40,7 @@ Optional switches:
 <img src="https://github.com/F3715H/AutomaticShodanSearch/blob/main/imgs/1.png" width=100% height=100%>
 
 <p>Query specific IP addresses (separate by spaces):
-<pre><code>python3 ASS.py -i 8.8.8.8 4.4.4.4</code></pre>
+<pre><code>python ASS.py -i 8.8.8.8 4.4.4.4</code></pre>
 
 
 <p>Query single/multiple network clusters, display also "not found" IPs and save results to CSV file:
