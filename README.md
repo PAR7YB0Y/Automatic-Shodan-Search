@@ -5,7 +5,7 @@
 
 <h2><a id="general" class="anchor" aria-hidden="true" href="#installation"></a>General Info</h2>
 
-<p>The script automates queries to shodan using its public API. In a situation when there is a need to start general passive reconnaissance (get the most important things like hostnames, OS and especially open ports) for several network clusters, it may save a lot of time because you see where you should start your assessment maybe? It is worth to mention that "Last Update" column refers to the date when shodan cached information about specific IP.</p>
+<p>The script automates queries to shodan using its public API. All queries covers free license. In a situation when there is a need to start general passive reconnaissance (get the most important things like hostnames, OS and especially open ports) for several network clusters, it may save a lot of time because you see where you should start your assessment maybe? It is worth to mention that "Last Update" column refers to the date when shodan cached information about specific IP.</p>
 
 <img src="https://github.com/F3715H/AutomaticShodanSearch/blob/main/imgs/2.png" width=100% height=100%>
 
@@ -30,7 +30,7 @@ Optional switches:
 <h2><a id="installation" class="anchor" aria-hidden="true" href="#installation"></a>Install & Config</h2>
 <p>Install requirements:</p>
 <pre><code>pip install requirements.txt</code></pre>
-<p>Update line 258 with your API key:</p>
+<p>Update line 258 with your shodan API key:</p>
 <pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
 <p>Then you may want to run the following command in order to verify whether connection with API establishes correctly:</p>
 <pre><code>python ASS.py -a</code></pre>
