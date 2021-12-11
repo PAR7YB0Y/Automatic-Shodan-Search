@@ -38,28 +38,41 @@ def clear():
 
 
 def banner():
-    print(Fore.LIGHTWHITE_EX+"""
-⣿⣿⡻⠿⣳⠸⢿⡇⢇⣿⡧⢹⠿⣿⣿⣿⣿⣾⣿⡇⣿⣿⣿⣿⡿⡐⣯⠁ ⠄⠄
-⠟⣛⣽⡳⠼⠄⠈⣷⡾⣥⣱⠃⠣⣿⣿⣿⣯⣭⠽⡇⣿⣿⣿⣿⣟⢢⠏⠄ ⠄
-⢠⡿⠶⣮⣝⣿⠄⠄⠈⡥⢭⣥⠅⢌⣽⣿⣻⢶⣭⡿⠿⠜⢿⣿⣿⡿⠁⠄⠄
-⠄⣼⣧⠤⢌⣭⡇⠄⠄⠄⠭⠭⠭⠯⠴⣚⣉⣛⡢⠭⠵⢶⣾⣦⡍⠁⠄⠄⠄⠄
-⠄⣿⣷⣯⣭⡷⠄⠄⢀⣀⠩⠍⢉⣛⣛⠫⢏⣈⣭⣥⣶⣶⣦⣭⣛⠄⠄⠄⠄⠄
-⢀⣿⣿⣿⡿⠃⢀⣴⣿⣿⣿⣎⢩⠌⣡⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠄⠄⠄
-⢸⡿⢟⣽⠎⣰⣿⣿⣿⣿⣿⣿⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠄⠄
-⣰⠯⣾⢅⣼⣿⣿⣿⣿⣿⣿⡇⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠄""",end='')
-    print(Fore.LIGHTYELLOW_EX+"""
- +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+-+-+
- |A|u|t|o|m|a|t|i|c| |S|h|o|d|a|n| |S|e|a|r|c|h|
- +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+-+-+"""+ Style.RESET_ALL,end='')
-    print(Fore.LIGHTWHITE_EX+"""
-⢸⣟⣧⡻⣿⣿⣿⣿⣿⣿⣿⣧⡻⣿⣿""",end='')
-    print(Fore.LIGHTRED_EX+"""    by @F3715H"""+ Style.RESET_ALL,end='')
-    print(Fore.LIGHTWHITE_EX+"""⣿⣿⣿⣿⣿⣿⠄
-⠈⢹⡧⣿⣸⠿⢿⣿⣿⣿⣿⡿⠗⣈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠄
-⠄⠘⢷⡳⣾⣷⣶⣶⣶⣶⣶⣾⣿⣿⢀⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠄
-⠄⠄⠈⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄
-⠄⠄⠄⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠄⠄⠀⠀⠀⠀  
+    print(Fore.LIGHTWHITE_EX+"""⠀⠀⠀  
+    _         /\_/\\
+   ( \       /   ``\\
+    ) )   __|   n n |
+   / /  /`   `'.==Y=)=  
+  ( (  /        `"`}
+   \ \|    \ """+Fore.LIGHTRED_EX+""" by @P@r7yb0y"""+ Style.RESET_ALL+""" 
+    \ \     ),   //
+     '._,  /'-\ ( (
+    aac  \,,)) \,),)
 """ + Style.RESET_ALL)
+
+# Print iterations progress
+def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
+    # source code: https://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+        printEnd    - Optional  : end character (e.g. "\r", "\r\n") (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+    print(f'\r{prefix} |{bar}| {percent}% {suffix}', end = printEnd)
+    # Print New Line on Complete
+    if iteration == total: 
+        print()
+
 
 
 def create_parser():
@@ -78,12 +91,12 @@ def create_parser():
 
 
 def create_table():
-    table_headers = PrettyTable(['IP Address', 'Hostnames', 'Operating System', 'Open Ports', 'Organization', 'Last Update','State'])
+    table_headers = PrettyTable(['IP Address', 'Hostnames', 'Service Banners', 'Open Ports', 'Organization', 'Last Update','State','Screenshots'])
     table_headers.align = "l"
     return table_headers
 
 
-def scan(parser, api_key):
+def scan(parser, api_key, api_key_screen):
     count = 0
     list_of_findings = []
 
@@ -98,7 +111,7 @@ def scan(parser, api_key):
                 net4 = ipaddress.ip_network(networks)
                 for x in net4.hosts():
                     count += 1
-                    list_of_findings = query_shodan(str(x), list_of_findings, api_key)
+                    list_of_findings = query_shodan(str(x), list_of_findings, api_key, api_key_screen)
                     update_results(parser.network, list_of_findings, table_headers, count, x, net4)
 
     # run scan for specific ip
@@ -111,7 +124,7 @@ def scan(parser, api_key):
             for ips in parser.ip:
                 for ip in ips:
                     count += 1
-                    list_of_findings = query_shodan(ip, list_of_findings, api_key)
+                    list_of_findings = query_shodan(ip, list_of_findings, api_key, api_key_screen)
                     update_results(ips, list_of_findings, table_headers, count, ip, None)
 
     elif parser.api:
@@ -126,11 +139,28 @@ def scan(parser, api_key):
     if parser.output:
         output_csv(list_of_findings)
 
+def detect_http(host_ip, item, api_key_screen):
+    if "HTTP" in item['data']:
+        #print("HTTP SERV DETECTED")
+        make_screenshot(host_ip, item['port'], api_key_screen)
+        return 1
 
-def query_shodan(target, list_of_findings, api_key):
+def detect_banner(item):
+    if ("product" in item) or ("version" in item):
+        if ("product" in item) and ("version" in item):
+            service_banner = f"{item['product']} {item['version']}"
+        elif "product" in item:
+            service_banner = f"{item['product']}"
+        elif "version" in item:
+            service_banner = f"{item['version']}"
+    else:
+        service_banner = f"N/A"
+    return service_banner
+
+def query_shodan(target, list_of_findings, api_key, api_key_screen):
     api = shodan.Shodan(api_key)
     list_test = list_of_findings
-    time.sleep(1)
+    time.sleep(1) 
     dns_resolve = 'https://api.shodan.io/dns/resolve?hostnames=' + target + '&key=' + api_key
     try:
         # First we need to resolve our targets domain to an IP
@@ -140,22 +170,35 @@ def query_shodan(target, list_of_findings, api_key):
         # Then we need to do a Shodan search on that IP
         host = api.host(host_ip)
         service = []
+        service_banners = []
         hostname = str(host.get('hostnames', 'N/A')).translate({ord(c): None for c in "[]'"})
         if len(hostname) == 0:
             hostname = Fore.LIGHTBLACK_EX+'N/A'+ Style.RESET_ALL
 
         # Print all banners
+        counter = 0
         for item in host['data']:
-            service.append(item['port'])
-
+            service.append(f"{item['port']}/{item['transport']}")
+            if detect_banner(item) != "N/A":
+                service_banners.append(f"{item['port']}:{detect_banner(item)}")
+            http = detect_http(host_ip, item, api_key_screen)
+            if http:
+               counter += 1  
+        if len(service_banners) == 0:
+            service_banners = (Fore.LIGHTBLACK_EX+'N/A'+ Style.RESET_ALL) 
+        else:
+            service_banners = str(service_banners).translate({ord(c): None for c in "[']"})
+        if counter > 0:
+            counter = Fore.LIGHTGREEN_EX + f"{counter}" + Style.RESET_ALL
         dict1 = {
             "IP Address": host['ip_str'],
             "Hostnames": hostname,
-            "Operating System": str(host.get('os', Fore.LIGHTBLACK_EX+'N/A'+ Style.RESET_ALL)).replace('None', Fore.LIGHTBLACK_EX+'N/A'+ Style.RESET_ALL),
-            "Open Ports": str(service).translate({ord(c): None for c in "[]"}),
+            "Service Banners": str(service_banners),
+            "Open Ports": str(service).translate({ord(c): None for c in "[']"}),
             "Organization": host.get('org',Fore.LIGHTBLACK_EX+'N/A'+ Style.RESET_ALL),
             "Last Update": host.get('last_update', Fore.LIGHTBLACK_EX+'N/A'+ Style.RESET_ALL),
-            "State": Fore.LIGHTGREEN_EX+"FOUND" + Style.RESET_ALL }
+            "State": Fore.LIGHTGREEN_EX+"FOUND" + Style.RESET_ALL,
+            "Screenshots": f"{counter}" }
 
         list_test.append(dict1.copy())
         return list_test
@@ -164,15 +207,26 @@ def query_shodan(target, list_of_findings, api_key):
         dict1 = {
             "IP Address": target,
             "Hostnames": Fore.LIGHTBLACK_EX+'N/A',
-            "Operating System": Fore.LIGHTBLACK_EX+'N/A',
+            "Service Banners": Fore.LIGHTBLACK_EX+'N/A',
             "Open Ports": Fore.LIGHTBLACK_EX+'N/A',
             "Organization": Fore.LIGHTBLACK_EX+'N/A',
             "Last Update": Fore.LIGHTBLACK_EX+'N/A',
-            "State": Fore.LIGHTRED_EX + 'NOT FOUND' }
+            "State": Fore.LIGHTRED_EX + 'NOT FOUND',
+            "Screenshots": Fore.LIGHTBLACK_EX + "0" + Style.RESET_ALL }
 
         list_test.append(dict1.copy())
         return list_of_findings
 
+def make_screenshot(host_ip, port,api_key_screen):
+    if "443" in str(port):
+        screenshot_url = f"https://api.apiflash.com/v1/urltoimage?access_key={api_key_screen}&url=https://{host_ip}:{port}"
+    else:
+        screenshot_url = f"https://api.apiflash.com/v1/urltoimage?access_key={api_key_screen}&url=http://{host_ip}:{port}"
+    response = requests.get(screenshot_url)
+    file_name = f"{host_ip}_p{port}.png"
+    file = open(file_name, "wb")
+    file.write(response.content)
+    file.close()
 
 def update_results(network, list_of_findings, table_headers, count, x, net4):
     clear()
@@ -190,29 +244,31 @@ def update_results(network, list_of_findings, table_headers, count, x, net4):
     for dictionary in list_of_findings:
         if dictionary['State'] == (Fore.LIGHTRED_EX + 'NOT FOUND'):
             not_found += 1
-
-    print("Scan results for: {}\nProgress: {}/{} - {}%\nChecking IP {}\nHosts found: {}\nHosts not found: {}"
+    
+    print("Scan results for: {}\nChecking IP {}\nHosts found: {}\nHosts not found: {}"
           .format(str(network).translate({ord(c): None for c in "[]'"}),
-                  count,
-                  hosts_amount,
-                  round((count/(hosts_amount))*100, 2),
                   x,
                   len(list_of_findings) - not_found,
                   not_found,
                   0
                   )
           )
-    print("------------------------------------------------------------------------------")
+    
+
+
+    printProgressBar(int(count), int(hosts_amount), prefix = 'Progress:', suffix = 'Complete', length = 50)
+    print("\n")
     if parser.verbose:
         for dictionary in list_of_findings:
             table_headers.add_row([
-                Fore.LIGHTBLUE_EX+str(dictionary['IP Address']) + Style.RESET_ALL,
-                Fore.YELLOW+str(dictionary['Hostnames']) + Style.RESET_ALL,
-                Fore.YELLOW+str(dictionary['Operating System']) + Style.RESET_ALL,
-                Fore.YELLOW+str(dictionary['Open Ports']) + Style.RESET_ALL,
-                Fore.YELLOW+str(dictionary['Organization']) + Style.RESET_ALL,
-                Fore.YELLOW+str(dictionary['Last Update'][:10]) + Style.RESET_ALL,
-                Fore.YELLOW+str(dictionary['State']) + Style.RESET_ALL
+                Fore.LIGHTBLUE_EX + str(dictionary['IP Address']) + Style.RESET_ALL,
+                Fore.YELLOW + str(dictionary['Hostnames']) + Style.RESET_ALL,
+                Fore.YELLOW + str(dictionary['Service Banners']) + Style.RESET_ALL,
+                Fore.YELLOW + str(dictionary['Open Ports']) + Style.RESET_ALL,
+                Fore.YELLOW + str(dictionary['Organization']) + Style.RESET_ALL,
+                Fore.YELLOW + str(dictionary['Last Update'][:10]) + Style.RESET_ALL,
+                Fore.YELLOW + str(dictionary['State']) + Style.RESET_ALL,
+                Fore.LIGHTBLACK_EX + str(dictionary['Screenshots']) + Style.RESET_ALL
             ])
     else:
         for dictionary in list_of_findings:
@@ -220,11 +276,12 @@ def update_results(network, list_of_findings, table_headers, count, x, net4):
                 table_headers.add_row([
                     Fore.LIGHTBLUE_EX + str(dictionary['IP Address']) + Style.RESET_ALL,
                     Fore.YELLOW + str(dictionary['Hostnames']) + Style.RESET_ALL,
-                    Fore.YELLOW + str(dictionary['Operating System']) + Style.RESET_ALL,
+                    Fore.YELLOW + str(dictionary['Service Banners']) + Style.RESET_ALL,
                     Fore.YELLOW + str(dictionary['Open Ports']) + Style.RESET_ALL,
                     Fore.YELLOW + str(dictionary['Organization']) + Style.RESET_ALL,
                     Fore.YELLOW + str(dictionary['Last Update'][:10]) + Style.RESET_ALL,
-                    Fore.YELLOW + str(dictionary['State']) + Style.RESET_ALL
+                    Fore.YELLOW + str(dictionary['State']) + Style.RESET_ALL,
+                    Fore.LIGHTBLACK_EX + str(dictionary['Screenshots']) + Style.RESET_ALL
                 ])
 
     print(table_headers)
@@ -236,7 +293,7 @@ def output_csv(data):
     with open(parser.output, 'w', encoding='UTF8', newline='') as f:
         # create the csv writer
         writer = csv.DictWriter(f, fieldnames=[
-            'IP Address', 'Hostnames', 'Operating System', 'Open Ports', 'Organization', 'Last Update', 'State'
+            'IP Address', 'Hostnames', 'Service Banners', 'Open Ports', 'Organization', 'Last Update', 'State', 'Screenshots'
         ])
         writer.writeheader()
 
@@ -255,7 +312,8 @@ def output_csv(data):
 
 if __name__ == '__main__':
     init()
-    api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT
+    api_key = "" # PLACE YOUR SHODAN API KEY HERE
+    api_key_screen = "" # PLACE YOUR https://api.apiflash.com API KEY HERE
     parser = create_parser()
     table_headers = create_table()
-    scan(parser, api_key)
+    scan(parser, api_key, api_key_screen)
