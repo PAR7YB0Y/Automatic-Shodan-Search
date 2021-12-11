@@ -44,7 +44,7 @@ def banner():
     ) )   __|   n n |
    / /  /`   `'.==Y=)=  
   ( (  /        `"`}
-   \ \|    \ """+Fore.LIGHTRED_EX+""" by @P@r7yb0y"""+ Style.RESET_ALL+""" 
+   \ \|    \ """+Fore.LIGHTRED_EX+""" by @PAR7YB0Y"""+ Style.RESET_ALL+""" 
     \ \     ),   //
      '._,  /'-\ ( (
     aac  \,,)) \,),)
