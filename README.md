@@ -30,7 +30,9 @@ Optional switches:
 <h2><a id="installation" class="anchor" aria-hidden="true" href="#installation"></a>Install & Config</h2>
 <p>Install requirements:</p>
 <pre><code>pip install -r requirements.txt</code></pre>
-<p>Update line 258 with your shodan API key:</p>
+<p>Update line 315 with your shodan API key:</p>
+<pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
+<p>Update line 316 with your https://api.apiflash.com api key:</p>
 <pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
 <p>Then you may want to run the following command in order to verify whether connection with API establishes correctly:</p>
 <pre><code>python ASS.py -a</code></pre>
