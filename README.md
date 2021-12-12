@@ -33,7 +33,7 @@ Optional switches:
 <p>Update line 315 with your shodan API key:</p>
 <pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
 <p>Update line 316 with your https://api.apiflash.com api key:</p>
-<pre><code>api_key = "INSERT_YOUR_API_KEY_HERE" # CHANGE IT</code></pre>
+<pre><code>api_key_screen = "" # PLACE YOUR https://api.apiflash.com API KEY HERE</code></pre>
 <p>Then you may want to run the following command in order to verify whether connection with API establishes correctly:</p>
 <pre><code>python ASS.py -a</code></pre>
 
